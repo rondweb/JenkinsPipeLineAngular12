@@ -35,7 +35,11 @@ ADD nginx.conf /etc/nginx/nginx.conf
 
 RUN mkdir /www-data
 
-COPY /dist/ /www-data/
+COPY ./dist/cities/*.html /www-data/
+COPY ./dist/cities/*.js /www-data/
+COPY ./dist/cities/*.css /www-data/
+COPY ./dist/cities/*.txt /www-data/
+COPY ./dist/cities/*.ico /www-data/
 
 RUN chmod 777 /www-data
 

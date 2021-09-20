@@ -21,7 +21,7 @@ pipeline {
                     nodeenv -p
                     npm install
                     ng update
-                    ng add @angular-eslint/schematics
+                    ng add @angular-eslint/schematics --skip-confirmation
                     ng lint cities
                     npm run test --watch=false
                     ng build --prod                    

@@ -19,7 +19,7 @@ export class CityService {
   constructor(private http: HttpClient) { }
   
   getCities(): Observable<City[]> {
-    return this.http.get<City[]>('http://localhost:8000/cities.json').pipe(
+    return this.http.get<City[]>('https://raw.githubusercontent.com/rondweb/JenkinsPipeLineAngular12/main/extras/cities.json').pipe(
       tap(_ => this.log('fetched cities')),
       catchError(this.handleError<City[]>('getCities', []))
     );

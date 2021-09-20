@@ -20,9 +20,10 @@ pipeline {
                     pip install nodejs
                     nodeenv -p
                     npm install
-                    npm install -g @angular/cli
                     ng update
-                    ng build
+                    ng lint
+                    npm run test --watch=false
+                    ng build --prod                    
                 """)               
             }
         }   

@@ -9,7 +9,7 @@ pipeline {
             }
         }     
 
-        stage('Creating enviroment') {
+        stage('Creating enviroment for angular and building frontend') {
             steps {
                 sh(script: """
                     pwd
@@ -30,17 +30,16 @@ pipeline {
 
         // npm run test --watch=false
         //npm install --save-dev @angular-devkit/build-angular
-        // stage('Docker build') {
-        //     steps {
-        //         sh(script: 'docker images -a')
-        //         sh(script: """
-        //             cd azure-vote
-        //             docker images -a 
-        //             docker build -t jenkins-pipeline .
-        //             docker images -a
-        //             cd ..
-        //         """)
-        //     }
-        // }     
+        stage('Docker build') {
+            steps {
+                sh(script: 'docker images -a')
+                sh(script: """
+                    pwd
+                    docker images -a 
+                    docker build -t cities .
+                    docker images -a                    
+                """)
+            }
+        }     
     }  
 }

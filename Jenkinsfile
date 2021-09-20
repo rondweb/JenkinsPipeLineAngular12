@@ -21,7 +21,7 @@ pipeline {
                 stage('Creating enviroment for angular and building frontend') {
                     steps {
                         sh(script: '''
-                        chown -R 128:136 "/.npm"
+                        su
                         npm install
                         ng update
                         ng add @angular-eslint/schematics --skip-confirmation

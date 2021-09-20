@@ -18,16 +18,31 @@ pipeline {
                         sh(script:'node --version')
                     }
                 }
-                stage('Creating enviroment for angular and building frontend') {
-                    steps {
-                        sh(script: '''
-                        su
+                // stage('Creating enviroment for angular and building frontend') {
+                //     steps {
+                //         sh(script: '''
+                //         su
+                //         npm install
+                //         ng update
+                //         ng add @angular-eslint/schematics --skip-confirmation
+                //         ng lint cities
+                //         ng build --prod
+                //     ''')
+                //     }
+                // }
+
+                // Permorming Install and Lint
+                docker.inside {
+                    stage('Install') {
+                        sh label:
+                        'Running npm install',
+                        script: '''
+                        node --version
                         npm install
-                        ng update
                         ng add @angular-eslint/schematics --skip-confirmation
                         ng lint cities
                         ng build --prod
-                    ''')
+                        '''
                     }
                 }
             }

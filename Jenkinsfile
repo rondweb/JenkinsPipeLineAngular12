@@ -15,7 +15,10 @@ pipeline {
                     pwd
                     virtualenv env
                     . env/bin/activate
+                    python --version
+                    pip install nodeenv
                     pip install nodejs
+                    nodeenv -p
                     npm install -g @angular/cli
                     ng build
                 """)               

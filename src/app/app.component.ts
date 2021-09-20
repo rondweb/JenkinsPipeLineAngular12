@@ -8,6 +8,8 @@ import { City } from '../city';
    styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  
+  title = 'cities';
 
   columnDefs = [
        {field: 'ID', sortable: true, filter: true},

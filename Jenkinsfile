@@ -18,7 +18,7 @@ pipeline {
                         sh(script:'node --version')
                     }
                 }
-                // stage('Creating enviroment for angular and building frontend') {
+                stage('Creating enviroment for angular and building frontend') {
                 //     steps {
                 //         sh(script: '''
                 //         su
@@ -29,7 +29,7 @@ pipeline {
                 //         ng build --prod
                 //     ''')
                 //     }
-                // }
+                
 
                 // Permorming Install and Lint
                 docker.inside {
@@ -44,6 +44,7 @@ pipeline {
                         ng build --prod
                         '''
                     }
+                }
                 }
             }
         }

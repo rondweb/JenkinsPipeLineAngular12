@@ -46,6 +46,6 @@ export class CityService {
   }
 
   private log(message: string) {
-    console.log(`HeroService: ${message}`);
+    console.log(`Service: ${message}`);
   }
 }

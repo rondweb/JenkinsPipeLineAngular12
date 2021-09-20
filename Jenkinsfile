@@ -19,13 +19,14 @@ pipeline {
                     pip install nodeenv
                     pip install nodejs
                     nodeenv -p
+                    npm install -g @angular/cli
                     npm install --save-dev @angular-devkit/build-angular
                     ng build
                 """)               
             }
         }   
 
-        // npm install -g @angular/cli
+        
 
         // stage('Docker build') {
         //     steps {

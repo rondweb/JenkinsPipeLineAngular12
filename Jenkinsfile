@@ -21,6 +21,7 @@ pipeline {
                     nodeenv -p
                     npm install
                     ng update
+                    ng add @angular/lint
                     ng lint
                     npm run test --watch=false
                     ng build --prod                    

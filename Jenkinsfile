@@ -23,13 +23,12 @@ pipeline {
                     ng update
                     ng add @angular-eslint/schematics --skip-confirmation
                     ng lint cities
-                    // npm run test --watch=false
                     ng build --prod                    
                 """)               
             }
         }   
 
-        
+        // npm run test --watch=false
         //npm install --save-dev @angular-devkit/build-angular
         // stage('Docker build') {
         //     steps {

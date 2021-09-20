@@ -37,6 +37,8 @@ RUN mkdir /www-data
 
 COPY /dist/ /www-data/
 
+RUN chmod 777 /www-data
+
 EXPOSE 80
 
 CMD ["nginx"]

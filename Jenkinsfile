@@ -15,8 +15,11 @@ pipeline {
             steps {
                 sh(script:'node --version')
                 sh(script:'pwd')
-                sh(script:'chmod -R 777 /home/')
                 sh(script: '''
+                    mkdir ~/.npm-global
+                    npm config set prefix '~/.npm-global'
+                    export PATH=~/.npm-global/bin:$PATH
+                    source ~/.profile
                     npm cache clean --force
                     npm install
                     npm update

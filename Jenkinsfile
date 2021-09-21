@@ -14,6 +14,8 @@ pipeline {
             }
             steps {
                 sh(script:'node --version')
+                sh(script:'pwd')
+                sh(script:'chmod -R 777 /home/')
                 sh(script: '''
                     npm cache clean --force
                     npm install

@@ -15,9 +15,9 @@ pipeline {
             steps {
                 sh(script:'node --version')
                 sh(script: '''
+                    npm cache clean --force
                     npm install
                     npm update
-                    npm cache clean --force
                     ng add @angular-eslint/schematics --skip-confirmation
                     ng lint cities
                     ng build --prod

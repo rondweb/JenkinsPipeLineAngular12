@@ -15,8 +15,10 @@ pipeline {
             steps {
                 sh(script:'node --version')
                 sh(script: '''
-                    pwd
-                    docker build -t cities .
+                    npm install
+                    ng add @angular-eslint/schematics --skip-confirmation
+                    ng lint cities
+                    ng build --prod
                 ''')
             }
             }
